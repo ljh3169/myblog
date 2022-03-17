@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        {% include 'navbar.html' %}
+        <section>
+            <h1>글쓰기</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                <!-- 일반 필드와 파일(이미지)필드 멀티로 구성됨-->
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">저장하기</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }} - Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        {% include 'navbar.html' %}
+        <section>
+            <h3>{{ post.title }}</h3>
+            <h5>{{ post.pub_date }}</h5>
+            {% if post.photo %}
+                <img src="{{ post.photo.url }}">
+            {% endif %}
+            <p>{{ post.content }}</p>
+        </section>
+    </div>
+</body>
+</html>

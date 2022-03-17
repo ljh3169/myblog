@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        {% include 'navbar.html' %}
+        <section>
+            <h1>로그인</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">로그인</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
